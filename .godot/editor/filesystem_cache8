@@ -1,0 +1,18 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1706320419
+icon.svg::CompressedTexture2D::4780604339676773396::1706318267::1706318280::1::::<><>::
+::res://Scenes/::1706319186
+::res://Scenes/Entities/::1706320382
+hole.tscn::PackedScene::778859619989958417::1706320382::0::1::::<><>::
+level.tscn::PackedScene::4119211826126703947::1706320382::0::1::::<><>::uid://bsc5htx4smq2u::::res://Scenes/Entities/submersable.tscn<>res://Scripts/Level Scripts/level.gd<>uid://cppth4p4c146q::::res://Scenes/Entities/player.tscn<>uid://8ikktsj8n68g::::res://Scenes/Systems/hole_controller.tscn
+player.tscn::PackedScene::5857807359358058482::1706320381::0::1::::<><>::res://Scripts/Entity Scripts/player.gd
+submersable.tscn::PackedScene::3655783669842458442::1706320382::0::1::::<><>::
+::res://Scenes/Systems/::1706320382
+hole_controller.tscn::PackedScene::2333372916157958524::1706320382::0::1::::<><>::res://Scripts/System Scripts/HoleController.gd<>uid://ldjx6835a05r::::res://Scenes/Entities/hole.tscn
+::res://Scripts/::1706319762
+::res://Scripts/Entity Scripts/::1706318765
+player.gd::GDScript::-1::1706318765::0::1::::<>CharacterBody2D<>::
+::res://Scripts/Level Scripts/::1706319884
+level.gd::GDScript::-1::1706319884::0::1::::<>Node2D<>::
+::res://Scripts/System Scripts/::1706320191
+HoleController.gd::GDScript::-1::1706320191::0::1::::<>Node<>::

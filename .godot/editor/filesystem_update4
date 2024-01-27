@@ -1,0 +1,9 @@
+res://Scenes/Systems/hole_controller.tscn
+res://Scripts/System Scripts/HoleController.gd
+res://Scenes/Entities/player.tscn
+res://Scenes/Entities/submersable.tscn
+res://Scenes/Entities/level.tscn
+res://Scenes/Entities/hole.tscn
+res://Scripts/Level Scripts/level.gd
+res://Scripts/Entity Scripts/player.gd
+res://Scripts/Entity Scripts/hole.gd
