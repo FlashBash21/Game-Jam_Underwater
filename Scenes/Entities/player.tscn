@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cppth4p4c146q"]
+[gd_scene load_steps=5 format=3 uid="uid://cppth4p4c146q"]
 
 [ext_resource type="Script" path="res://Scripts/Entity Scripts/player.gd" id="1_xavrv"]
+[ext_resource type="PackedScene" uid="uid://c2wrpvubsgfvp" path="res://Scenes/Systems/progress_circle.tscn" id="2_8o85b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0udeo"]
 size = Vector2(40, 40)
@@ -29,3 +30,10 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area"]
 position = Vector2(0.5, -8.5)
 shape = SubResource("RectangleShape2D_ekc8q")
+
+[node name="ProgressCircle" parent="." instance=ExtResource("2_8o85b")]
+offset_left = -32.0
+offset_top = -106.0
+offset_right = -32.0
+offset_bottom = -106.0
+scale = Vector2(0.5, 0.5)

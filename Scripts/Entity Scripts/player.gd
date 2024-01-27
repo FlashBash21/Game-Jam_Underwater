@@ -2,26 +2,51 @@ extends CharacterBody2D
 
 signal delete_hole(hole)
 @onready var interaction_area = $"Interaction Area"
+@onready var progress_circle = $ProgressCircle
 
-const SPEED = 300.0
+const SPEED = 600.0
 const JUMP_VELOCITY = -400.0
+const USE_TIME = 1
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var nearest_hole: Hole
+var interaction_timer: float
+
+func _ready() -> void:
+	progress_circle.visible = false
+	progress_circle.reset()
 
 func _physics_process(delta: float) -> void:
 	
 	#check if we are still in range of our nearest hole
+	var new_hole = getHoleInRange()
+	if new_hole != nearest_hole: resetTimer()
 	
-	nearest_hole = getHoleInRange()
+	nearest_hole = new_hole
+	
+
+	handleInteraction(delta)
+	if nearest_hole and interaction_timer <= 0:
+		delete_hole.emit(nearest_hole)
+		resetTimer()
 
 	modifyVelocity(delta)
 	move_and_slide()
 
-func handleInteraction() -> void:
-	pass
+func handleInteraction(delta: float) -> void:
+	if Input.is_action_pressed("Interaction") and nearest_hole:
+		interaction_timer -= delta
+		progress_circle.setValue(100 - (interaction_timer/USE_TIME*100))
+		progress_circle.visible = true
+	else:
+		resetTimer()
+		progress_circle.reset()
+		progress_circle.visible = false
+
+func resetTimer() -> void:
+	interaction_timer = USE_TIME
 
 #adjusts velocity property based on delta
 func modifyVelocity(delta: float) -> void:

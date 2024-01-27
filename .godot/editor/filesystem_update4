@@ -1,9 +1,11 @@
-res://Scenes/Systems/hole_controller.tscn
-res://Scripts/System Scripts/HoleController.gd
 res://Scenes/Entities/player.tscn
+res://Scripts/System Scripts/HoleController.gd
 res://Scenes/Entities/submersable.tscn
 res://Scenes/Entities/level.tscn
 res://Scenes/Entities/hole.tscn
-res://Scripts/Level Scripts/level.gd
+res://Scenes/Systems/hole_controller.tscn
 res://Scripts/Entity Scripts/player.gd
 res://Scripts/Entity Scripts/hole.gd
+res://Scenes/Systems/progress_circle.tscn
+res://Scripts/System Scripts/ProgressCircle.gd
+res://Scripts/Level Scripts/level.gd

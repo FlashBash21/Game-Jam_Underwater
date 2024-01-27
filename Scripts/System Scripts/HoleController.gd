@@ -6,6 +6,9 @@ var xRange: Vector2
 var yRange: Vector2
 var spawned_holes: Array
 
+func getNetWaterLevel() -> float:
+	return spawned_holes.size() * (1./100.)
+
 # Call this when instantiating the controller
 func setupController(minX, maxX, minY, maxY):
 	xRange = Vector2(minX, maxX)

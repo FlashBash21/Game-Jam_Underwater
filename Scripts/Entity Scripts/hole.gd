@@ -3,6 +3,7 @@ class_name Hole
 
 @onready var highlight = $Highlight
 
+
 func _ready():
 	highlight.visible = false
 
