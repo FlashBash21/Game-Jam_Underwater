@@ -113,9 +113,6 @@ text = "GAME OVER"
 fit_content = true
 autowrap_mode = 0
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_xvpqq")
-
 [node name="MarginContainer3" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 1
@@ -133,6 +130,9 @@ theme_override_font_sizes/normal_font_size = 20
 text = "High Score: -0m"
 fit_content = true
 autowrap_mode = 0
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_xvpqq")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer2/RestartButton" to="." method="_on_restart_button_pressed"]

@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://bu71pmym1klce"]
+
+[ext_resource type="Script" path="res://Scripts/Level Scripts/Controls.gd" id="1_g0plp"]
+[ext_resource type="Texture2D" uid="uid://bin10nap8mnxn" path="res://Assets/Sprites/background..png" id="2_47uul"]
+[ext_resource type="Theme" uid="uid://bgmhfbp1c0x85" path="res://Assets/Sprites/ButtonTextures.tres" id="3_v7wj6"]
+[ext_resource type="FontFile" uid="uid://c1526nu7fcgd5" path="res://Assets/Fonts/Komika/KOMIKATR.ttf" id="4_b872p"]
+[ext_resource type="Texture2D" uid="uid://crn2god8g6ryh" path="res://Assets/Sprites/menu_buttons1.png" id="5_j8dos"]
+[ext_resource type="Texture2D" uid="uid://bi6pvq2bkf1qe" path="res://Assets/Sprites/menu_buttons2.png" id="6_5mst7"]
+[ext_resource type="AudioStream" uid="uid://0bgmn3grpphb" path="res://Assets/Sounds/title.mp3" id="7_8eoin"]
+[ext_resource type="AudioStream" uid="uid://bd181snopyegr" path="res://Assets/Sounds/button2.mp3" id="8_nknp7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x1ylc"]
+texture = ExtResource("5_j8dos")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gylkk"]
+texture = ExtResource("6_5mst7")
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g0plp")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(623, 380)
+rotation = 1.5708
+scale = Vector2(1.31198, 1.31198)
+texture = ExtResource("2_47uul")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -548.0
+offset_top = -621.0
+offset_right = 548.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ScoreLabel" type="RichTextLabel" parent="MarginContainer3"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 40
+text = "
+How to play:
+
+1. Arrow keys to move left/right
+2. 'E' to press buttons or repair holes
+3. Buttons drain water level by 100% over 2
+seconds. 6 second cooldown.
+4. Holes take 1 second to repair
+5. Get as deep as you can! Don't let the water
+level fill up the ship."
+autowrap_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(100, 200)
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("3_v7wj6")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_b872p")
+theme_override_styles/normal = SubResource("StyleBoxTexture_x1ylc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gylkk")
+text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_8eoin")
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_nknp7")
+
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

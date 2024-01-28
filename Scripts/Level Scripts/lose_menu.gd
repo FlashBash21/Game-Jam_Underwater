@@ -1,7 +1,8 @@
 extends Control
 @onready var audio_stream_player = $AudioStreamPlayer
-@onready var click_player = $AudioStreamPlayer2
 @onready var score_label = $MarginContainer3/ScoreLabel
+@onready var click_player = $ClickPlayer
+
 var save_path = "user://SubSinkers.save"
 
 func _ready():

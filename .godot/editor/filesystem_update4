@@ -19,3 +19,9 @@ res://Scenes/Systems/background.tscn
 res://Scripts/System Scripts/background.gd
 res://Scripts/Shaders/submersable.gdshader
 res://Assets/Sprites/ButtonTextures.tres
+res://Scenes/Systems/credits.tscn
+res://Scripts/Level Scripts/credits.gd
+res://Scripts/Level Scripts/Controls.gd
+res://Scenes/Systems/controls.tscn
+res://glob_vars.gd
+res://Scripts/System Scripts/glob_vars.gd

@@ -1,0 +1,13 @@
+res://Assets/Sprites/ButtonTextures.tres::89c4fd4f1a256adeb4074f9195d65af1::1706476226::res://.godot/exported/133200997/export-71e60169d7a69e86cd58b142c79db6be-ButtonTextures.res
+res://Scenes/Entities/hole.tscn::b942acb6661fdb58da839b37ca1145bc::1706483885::res://.godot/exported/133200997/export-844825ce8818ec505cba3ea19cc935f3-hole.scn
+res://Scenes/Entities/level.tscn::e34dafb6e0fd35e247b1f560a35555d4::1706483884::res://.godot/exported/133200997/export-c349ad079229ca3c753ebcb821794d5e-level.scn
+res://Scenes/Entities/player.tscn::ac9951c1db2e93d77f365a2d4c3e0a91::1706483884::res://.godot/exported/133200997/export-451bebc45433b6ac2e7ea82126ce8736-player.scn
+res://Scenes/Entities/button.tscn::2926c41ba639664ef20149a43f11e14a::1706483885::res://.godot/exported/133200997/export-2e87d20bcb4b0b22d2cea89cc442918e-button.scn
+res://Scenes/Entities/submersable.tscn::a822679337abc6687441d7aa82b34b85::1706483884::res://.godot/exported/133200997/export-e3e69e6b667678688533ea4e6dd7f551-submersable.scn
+res://Scenes/Systems/hole_controller.tscn::28d6f8a22e454bc7d95667df33a0e83c::1706483885::res://.godot/exported/133200997/export-0b584e0c5538296716ada9a541cd0f1c-hole_controller.scn
+res://Scenes/Systems/progress_circle.tscn::2ab729b675ff450c1b64ef3c852c288c::1706483885::res://.godot/exported/133200997/export-b608e689fac55d4f2e9c06a097db153e-progress_circle.scn
+res://Scenes/Systems/lose_menu.tscn::2ce28c01d1e548e9fce88ef6f7eae732::1706483885::res://.godot/exported/133200997/export-7d040aacb3c70b2d363fd210f114a883-lose_menu.scn
+res://Scenes/Systems/background.tscn::6de53281efe6917a2d4f54642e5907d2::1706483194::res://.godot/exported/133200997/export-e84ea0f4b5cefca5820b19e64ae4c9e8-background.scn
+res://Scenes/Systems/start_menu.tscn::046e9d8c726ea10215a95078263aad93::1706483885::res://.godot/exported/133200997/export-d6705fb6b9a240f97b3833c857684ff6-start_menu.scn
+res://Scenes/Systems/credits.tscn::ff35d929fedc35d793fc5ada52bc6343::1706483885::res://.godot/exported/133200997/export-f9aa224efba440a6f4241faf45f0a216-credits.scn
+res://Scenes/Systems/controls.tscn::34be96fa0ee2c3b7918141c2bc38ba65::1706483885::res://.godot/exported/133200997/export-45e036fd2b4ad5abeb454dd04d56e8d6-controls.scn

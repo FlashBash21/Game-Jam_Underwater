@@ -9,6 +9,7 @@ extends Node2D
 @onready var loop_song_player = $LoopSongPlayer
 @onready var submersable = $Submersable
 @onready var difficulty_timer = $"Difficulty Timer"
+@onready var click_player = $ClickPlayer
 
 var save_path = "user://SubSinkers.save"
 
@@ -26,6 +27,7 @@ func _ready():
 	intro_song_player.play()
 	difficulty_timer.start()
 	hole_controller.updateSpawnTimer(getNewTime())
+	click_player.play()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

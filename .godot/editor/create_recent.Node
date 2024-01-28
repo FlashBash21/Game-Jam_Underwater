@@ -1,3 +1,4 @@
+Control
 RichTextLabel
 MarginContainer
 AudioStreamPlayer
@@ -9,6 +10,5 @@ PointLight2D
 SubViewport
 Sprite2D
 ColorRect
-Control
 ParallaxLayer
 TextureRect

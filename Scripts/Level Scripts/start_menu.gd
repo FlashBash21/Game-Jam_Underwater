@@ -10,17 +10,23 @@ func _ready():
 	bobbing_animation.play("float")
 	score_label.visible = true
 	load_high_score()
+	audio_stream_player.play(GlobVars.musicProgress)
+	if !GlobVars.launch:
+		click()
+	else:
+		GlobVars.launch = false
+
 
 func click():
 	click_player.play()
 
+
 func _on_start_button_pressed():
-	click()
+	GlobVars.musicProgress = audio_stream_player.get_playback_position()
 	get_tree().change_scene_to_file("res://Scenes/Entities/level.tscn")
 
 
 func _on_quit_button_pressed():
-	click()
 	get_tree().quit()
 
 
@@ -29,8 +35,8 @@ func _on_audio_stream_player_finished():
 
 
 func _on_options_button_pressed():
-	click()
-	pass # Replace with function body.
+	GlobVars.musicProgress = audio_stream_player.get_playback_position()
+	get_tree().change_scene_to_file("res://Scenes/Systems/credits.tscn")
 
 func load_high_score():
 	var score = 0
@@ -42,3 +48,9 @@ func load_high_score():
 	else:
 		score_label.visible = false
 		
+
+
+func _on_controls_pressed():
+	click()
+	GlobVars.musicProgress = audio_stream_player.get_playback_position()
+	get_tree().change_scene_to_file("res://Scenes/Systems/controls.tscn")

@@ -87,7 +87,18 @@ theme_override_fonts/font = ExtResource("4_nlia8")
 theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxTexture_vsggt")
 theme_override_styles/hover = SubResource("StyleBoxTexture_d80bo")
-text = "Options"
+text = "Credits"
+
+[node name="Controls" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("3_osmeu")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nlia8")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxTexture_vsggt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d80bo")
+text = " Controls "
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -101,7 +112,6 @@ text = "Quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_byw3t")
-autoplay = true
 
 [node name="Ship" type="Sprite2D" parent="."]
 position = Vector2(566, 221.333)
@@ -169,5 +179,6 @@ autowrap_mode = 0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
