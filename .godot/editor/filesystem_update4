@@ -4,8 +4,14 @@ res://Scenes/Entities/submersable.tscn
 res://Scenes/Entities/level.tscn
 res://Scenes/Entities/hole.tscn
 res://Scenes/Systems/hole_controller.tscn
-res://Scripts/Entity Scripts/player.gd
-res://Scripts/Entity Scripts/hole.gd
 res://Scenes/Systems/progress_circle.tscn
-res://Scripts/System Scripts/ProgressCircle.gd
+res://Scripts/System Scripts/Interactable.gd
+res://Scripts/Entity Scripts/hole.gd
+res://Scripts/Entity Scripts/player.gd
+res://Scripts/Entity Scripts/button.gd
+res://Scenes/Entities/button.tscn
 res://Scripts/Level Scripts/level.gd
+res://Scenes/Systems/start_menu.tscn
+res://Scripts/Level Scripts/start_menu.gd
+res://Scenes/Systems/lose_menu.tscn
+res://Scripts/Level Scripts/lose_menu.gd

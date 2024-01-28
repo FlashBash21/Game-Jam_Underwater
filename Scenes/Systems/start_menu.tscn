@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmo5lyrsrtdmf"]
+
+[ext_resource type="Script" path="res://Scripts/Level Scripts/start_menu.gd" id="1_a6471"]
+[ext_resource type="AudioStream" uid="uid://0bgmn3grpphb" path="res://Assets/Sounds/title.mp3" id="2_byw3t"]
+[ext_resource type="Texture2D" uid="uid://dptlttsd32cba" path="res://Assets/Sprites/ship.png" id="3_shf15"]
+[ext_resource type="Texture2D" uid="uid://b07m1x0t2ajc0" path="res://Assets/Sprites/character_idle.png" id="4_m8k0y"]
+
+[sub_resource type="Animation" id="Animation_8orqt"]
+resource_name = "float"
+length = 7.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ship:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6, 7),
+"transitions": PackedFloat32Array(1, 2.54912, 1.46409, 2.2974),
+"update": 0,
+"values": [Vector2(566, 220), Vector2(566, 250), Vector2(566, 215), Vector2(566, 220)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ohcsv"]
+_data = {
+"float": SubResource("Animation_8orqt")
+}
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a6471")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_byw3t")
+autoplay = true
+
+[node name="Ship" type="Sprite2D" parent="."]
+position = Vector2(566, 221.333)
+scale = Vector2(0.536, 0.536)
+texture = ExtResource("3_shf15")
+
+[node name="Player" type="Sprite2D" parent="Ship"]
+position = Vector2(373.134, 136.194)
+scale = Vector2(1.86567, 1.86567)
+texture = ExtResource("4_m8k0y")
+
+[node name="BobbingAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ohcsv")
+}
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

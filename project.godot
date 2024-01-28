@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Game Jam: Underwater"
-run/main_scene="res://Scenes/Entities/level.tscn"
+run/main_scene="res://Scenes/Systems/start_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [input]
 
@@ -28,3 +32,7 @@ Interaction={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Level"
 2d_physics/layer_3="Interactables"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

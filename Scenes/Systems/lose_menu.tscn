@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://twwdepujp2d7"]
+
+[ext_resource type="Script" path="res://Scripts/Level Scripts/lose_menu.gd" id="1_nha2n"]
+[ext_resource type="Texture2D" uid="uid://f4pasl33536n" path="res://Assets/Sprites/game_over.png" id="1_u45mo"]
+[ext_resource type="AudioStream" uid="uid://dpkt5148cn627" path="res://Assets/Sounds/sad-trombone.mp3" id="3_k1iwr"]
+
+[node name="Lose Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nha2n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(588, 315)
+scale = Vector2(0.328775, 0.328775)
+texture = ExtResource("1_u45mo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_k1iwr")
+volume_db = -10.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="MenuButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Menu"
+
+[node name="RestartButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

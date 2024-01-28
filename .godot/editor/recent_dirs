@@ -1,5 +1,6 @@
-res://Scenes/Systems
-res://Scripts/System Scripts
-res://Scripts/Entity Scripts
 res://Scripts/Level Scripts
+res://Scenes/Systems
+res://Assets/Sprites
 res://Scenes/Entities
+res://Scripts/Entity Scripts
+res://Scripts/System Scripts

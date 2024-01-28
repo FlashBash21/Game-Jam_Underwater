@@ -1,12 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://8ikktsj8n68g"]
+[gd_scene load_steps=3 format=3 uid="uid://8ikktsj8n68g"]
 
 [ext_resource type="Script" path="res://Scripts/System Scripts/HoleController.gd" id="1_ru7o6"]
+[ext_resource type="AudioStream" uid="uid://bd181snopyegr" path="res://Assets/Sounds/button2.mp3" id="2_q7l2k"]
 
 [node name="HoleController" type="Node"]
 script = ExtResource("1_ru7o6")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="DrainCooldown" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="DrainTime" type="Timer" parent="."]
+
+[node name="ButtonClickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_q7l2k")
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="DrainTime" to="." method="_on_drain_time_timeout"]

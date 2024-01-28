@@ -1,26 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://cppth4p4c146q"]
+[gd_scene load_steps=12 format=3 uid="uid://cppth4p4c146q"]
 
 [ext_resource type="Script" path="res://Scripts/Entity Scripts/player.gd" id="1_xavrv"]
 [ext_resource type="PackedScene" uid="uid://c2wrpvubsgfvp" path="res://Scenes/Systems/progress_circle.tscn" id="2_8o85b"]
+[ext_resource type="Texture2D" uid="uid://b07m1x0t2ajc0" path="res://Assets/Sprites/character_idle.png" id="3_no8dv"]
+[ext_resource type="Texture2D" uid="uid://k1gw7pyoom4k" path="res://Assets/Sprites/character_walk2.png" id="4_g54tm"]
+[ext_resource type="Texture2D" uid="uid://cdtgfpixahx5b" path="res://Assets/Sprites/character_walk3.png" id="5_dryst"]
+[ext_resource type="AudioStream" uid="uid://ia563x1jl0t0" path="res://Assets/Sounds/step_a.mp3" id="6_cl64b"]
+[ext_resource type="AudioStream" uid="uid://cgbkyetx1vbsx" path="res://Assets/Sounds/step_b.mp3" id="7_bxa3y"]
+[ext_resource type="AudioStream" uid="uid://bwv00fctdq8ol" path="res://Assets/Sounds/repair2.mp3" id="8_72b35"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0udeo"]
-size = Vector2(40, 40)
+size = Vector2(29, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ekc8q"]
-size = Vector2(89, 57)
+size = Vector2(54, 83)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yc5vr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_no8dv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_g54tm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dryst")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 2
 script = ExtResource("1_xavrv")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -19.0
-offset_top = -20.0
-offset_right = 21.0
-offset_bottom = 20.0
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
+position = Vector2(0.5, -3)
 shape = SubResource("RectangleShape2D_0udeo")
 
 [node name="Interaction Area" type="Area2D" parent="."]
@@ -28,12 +50,28 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Area"]
-position = Vector2(0.5, -8.5)
+position = Vector2(-1, -21.5)
 shape = SubResource("RectangleShape2D_ekc8q")
 
 [node name="ProgressCircle" parent="." instance=ExtResource("2_8o85b")]
 offset_left = -32.0
-offset_top = -106.0
+offset_top = -116.0
 offset_right = -32.0
-offset_bottom = -106.0
+offset_bottom = -116.0
 scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5.96046e-07, -2)
+scale = Vector2(1.375, 1.375)
+sprite_frames = SubResource("SpriteFrames_yc5vr")
+animation = &"walk"
+speed_scale = 0.5
+
+[node name="Walk1Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_cl64b")
+
+[node name="Walk2Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_bxa3y")
+
+[node name="RepairPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_72b35")

@@ -1,23 +1,28 @@
 [gd_scene load_steps=2 format=3 uid="uid://bsc5htx4smq2u"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_upe3v"]
-size = Vector2(1009, 20)
+[ext_resource type="Texture2D" uid="uid://dptlttsd32cba" path="res://Assets/Sprites/ship.png" id="1_7diim"]
 
 [node name="Submersable" type="StaticBody2D"]
 collision_layer = 2
 collision_mask = 0
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(438, 34)
+texture = ExtResource("1_7diim")
+
 [node name="Background" type="ColorRect" parent="."]
+visible = false
 offset_right = 1000.0
 offset_bottom = 214.0
 color = Color(0.619608, 0.619608, 0.619608, 1)
 
 [node name="Floor" type="ColorRect" parent="."]
+visible = false
 offset_top = 197.0
 offset_right = 1000.0
 offset_bottom = 213.0
 color = Color(0.254902, 0.254902, 0.254902, 1)
 
-[node name="Hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(494.5, 208)
-shape = SubResource("RectangleShape2D_upe3v")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PackedVector2Array(-11, 97, -10, 110, -2, 133, 14, 155, 53, 184, 94, 204, 881, 195, 905, 186, 934, 170, 965, 148, 991, 119, 991, 20, 1052, 20, 1052, 96, 992, 205, 783, 260, 559, 295, 374, 302, 102, 283, 7, 222)
