@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://byxm21nqjg1gx"]
+[gd_scene load_steps=9 format=3 uid="uid://byxm21nqjg1gx"]
 
 [ext_resource type="PackedScene" uid="uid://bsc5htx4smq2u" path="res://Scenes/Entities/submersable.tscn" id="1_cv5s0"]
 [ext_resource type="Script" path="res://Scripts/Level Scripts/level.gd" id="1_qg62l"]
+[ext_resource type="PackedScene" uid="uid://c8uo4iyjo7jdo" path="res://Scenes/Systems/background.tscn" id="2_3wy70"]
 [ext_resource type="PackedScene" uid="uid://cppth4p4c146q" path="res://Scenes/Entities/player.tscn" id="2_vgux5"]
 [ext_resource type="PackedScene" uid="uid://8ikktsj8n68g" path="res://Scenes/Systems/hole_controller.tscn" id="3_x3kxh"]
 [ext_resource type="PackedScene" uid="uid://6va0l2d7vxql" path="res://Scenes/Entities/button.tscn" id="5_rspv2"]
@@ -10,6 +11,9 @@
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_qg62l")
+
+[node name="Background" parent="." instance=ExtResource("2_3wy70")]
+position = Vector2(484, -706)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -28,6 +32,7 @@ offset_bottom = 643.0
 text = "Depth:  0 m"
 
 [node name="Control" type="Control" parent="UI"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -65,7 +70,7 @@ z_index = 1
 position = Vector2(82, 148)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0, -114)
+position = Vector2(0, -78)
 zoom = Vector2(1.75, 1.75)
 process_callback = 0
 position_smoothing_enabled = true
@@ -79,5 +84,9 @@ volume_db = -10.0
 stream = ExtResource("7_fkrkv")
 volume_db = -10.0
 
+[node name="Difficulty Timer" type="Timer" parent="."]
+wait_time = 15.0
+
 [connection signal="finished" from="IntroSongPlayer" to="." method="_on_intro_song_player_finished"]
 [connection signal="finished" from="LoopSongPlayer" to="." method="_on_loop_song_player_finished"]
+[connection signal="timeout" from="Difficulty Timer" to="." method="_on_difficulty_timer_timeout"]

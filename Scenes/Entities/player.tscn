@@ -75,3 +75,4 @@ stream = ExtResource("7_bxa3y")
 
 [node name="RepairPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_72b35")
+volume_db = -10.0

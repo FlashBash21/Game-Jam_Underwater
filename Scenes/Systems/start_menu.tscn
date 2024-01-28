@@ -1,9 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://dmo5lyrsrtdmf"]
+[gd_scene load_steps=16 format=3 uid="uid://dmo5lyrsrtdmf"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/start_menu.gd" id="1_a6471"]
 [ext_resource type="AudioStream" uid="uid://0bgmn3grpphb" path="res://Assets/Sounds/title.mp3" id="2_byw3t"]
+[ext_resource type="Texture2D" uid="uid://bin10nap8mnxn" path="res://Assets/Sprites/background..png" id="2_m7ang"]
+[ext_resource type="Theme" uid="uid://bgmhfbp1c0x85" path="res://Assets/Sprites/ButtonTextures.tres" id="3_osmeu"]
+[ext_resource type="Texture2D" uid="uid://crn2god8g6ryh" path="res://Assets/Sprites/menu_buttons1.png" id="3_s32yb"]
 [ext_resource type="Texture2D" uid="uid://dptlttsd32cba" path="res://Assets/Sprites/ship.png" id="3_shf15"]
+[ext_resource type="Texture2D" uid="uid://bi6pvq2bkf1qe" path="res://Assets/Sprites/menu_buttons2.png" id="4_22wp8"]
 [ext_resource type="Texture2D" uid="uid://b07m1x0t2ajc0" path="res://Assets/Sprites/character_idle.png" id="4_m8k0y"]
+[ext_resource type="FontFile" uid="uid://c1526nu7fcgd5" path="res://Assets/Fonts/Komika/KOMIKATR.ttf" id="4_nlia8"]
+[ext_resource type="FontFile" uid="uid://d1qbvglq4astw" path="res://Assets/Fonts/Komika/KOMIKAB_.ttf" id="6_5pgm6"]
+[ext_resource type="AudioStream" uid="uid://bd181snopyegr" path="res://Assets/Sounds/button2.mp3" id="11_ifyc7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vsggt"]
+texture = ExtResource("3_s32yb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d80bo"]
+texture = ExtResource("4_22wp8")
 
 [sub_resource type="Animation" id="Animation_8orqt"]
 resource_name = "float"
@@ -19,7 +32,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 3, 6, 7),
 "transitions": PackedFloat32Array(1, 2.54912, 1.46409, 2.2974),
 "update": 0,
-"values": [Vector2(566, 220), Vector2(566, 250), Vector2(566, 215), Vector2(566, 220)]
+"values": [Vector2(566, 220), Vector2(566, 260), Vector2(566, 210), Vector2(566, 220)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ohcsv"]
@@ -36,6 +49,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a6471")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(623, 380)
+rotation = 1.5708
+scale = Vector2(1.31198, 1.31198)
+texture = ExtResource("2_m7ang")
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
@@ -46,19 +65,38 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(100, 200)
 layout_mode = 2
 
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme = ExtResource("3_osmeu")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nlia8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vsggt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d80bo")
 text = "Start"
 
 [node name="OptionsButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme = ExtResource("3_osmeu")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nlia8")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxTexture_vsggt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d80bo")
 text = "Options"
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme = ExtResource("3_osmeu")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nlia8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vsggt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_d80bo")
 text = "Quit"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -80,6 +118,56 @@ libraries = {
 "": SubResource("AnimationLibrary_ohcsv")
 }
 
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_top = -40.0
+offset_right = 46.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_5pgm6")
+theme_override_font_sizes/normal_font_size = 100
+text = "Submarine Sinkers"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_ifyc7")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="ScoreLabel" type="RichTextLabel" parent="MarginContainer3"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_nlia8")
+theme_override_font_sizes/normal_font_size = 20
+text = "High Score: -0m"
+fit_content = true
+autowrap_mode = 0
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]

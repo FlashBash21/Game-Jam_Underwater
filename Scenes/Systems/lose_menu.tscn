@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://twwdepujp2d7"]
+[gd_scene load_steps=13 format=3 uid="uid://twwdepujp2d7"]
 
 [ext_resource type="Script" path="res://Scripts/Level Scripts/lose_menu.gd" id="1_nha2n"]
 [ext_resource type="Texture2D" uid="uid://f4pasl33536n" path="res://Assets/Sprites/game_over.png" id="1_u45mo"]
-[ext_resource type="AudioStream" uid="uid://dpkt5148cn627" path="res://Assets/Sounds/sad-trombone.mp3" id="3_k1iwr"]
+[ext_resource type="Texture2D" uid="uid://bin10nap8mnxn" path="res://Assets/Sprites/background..png" id="2_fsntf"]
+[ext_resource type="AudioStream" uid="uid://cn3w11f1h4vqt" path="res://Assets/Sounds/crunch.mp3" id="4_5et0y"]
+[ext_resource type="FontFile" uid="uid://d1qbvglq4astw" path="res://Assets/Fonts/Komika/KOMIKAB_.ttf" id="5_2dfmi"]
+[ext_resource type="Theme" uid="uid://bgmhfbp1c0x85" path="res://Assets/Sprites/ButtonTextures.tres" id="5_t0lhv"]
+[ext_resource type="FontFile" uid="uid://c1526nu7fcgd5" path="res://Assets/Fonts/Komika/KOMIKATR.ttf" id="6_4gckm"]
+[ext_resource type="Texture2D" uid="uid://crn2god8g6ryh" path="res://Assets/Sprites/menu_buttons1.png" id="7_q0otc"]
+[ext_resource type="Texture2D" uid="uid://bi6pvq2bkf1qe" path="res://Assets/Sprites/menu_buttons2.png" id="8_jd7o8"]
+[ext_resource type="AudioStream" uid="uid://bd181snopyegr" path="res://Assets/Sounds/button2.mp3" id="10_xvpqq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0shxe"]
+texture = ExtResource("7_q0otc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_47bcg"]
+texture = ExtResource("8_jd7o8")
 
 [node name="Lose Menu" type="Control"]
 layout_mode = 3
@@ -13,14 +26,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nha2n")
 
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(623, 380)
+rotation = 1.5708
+scale = Vector2(1.31198, 1.31198)
+texture = ExtResource("2_fsntf")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(588, 315)
 scale = Vector2(0.328775, 0.328775)
 texture = ExtResource("1_u45mo")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_k1iwr")
-volume_db = -10.0
+stream = ExtResource("4_5et0y")
+volume_db = 10.0
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 offset_right = 40.0
@@ -30,22 +49,91 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-custom_minimum_size = Vector2(100, 0)
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(100, 200)
 layout_mode = 2
 
-[node name="MenuButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="MenuButton" type="Button" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme = ExtResource("5_t0lhv")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4gckm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0shxe")
+theme_override_styles/hover = SubResource("StyleBoxTexture_47bcg")
 text = "Menu"
 
-[node name="RestartButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="RestartButton" type="Button" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-text = "Restart"
+theme = ExtResource("5_t0lhv")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4gckm")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxTexture_0shxe")
+theme_override_styles/hover = SubResource("StyleBoxTexture_47bcg")
+text = "Restart
+"
 
-[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+theme = ExtResource("5_t0lhv")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_4gckm")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0shxe")
+theme_override_styles/hover = SubResource("StyleBoxTexture_47bcg")
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -46.0
+offset_top = -40.0
+offset_right = 46.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("5_2dfmi")
+theme_override_font_sizes/normal_font_size = 100
+text = "GAME OVER"
+fit_content = true
+autowrap_mode = 0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_xvpqq")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="ScoreLabel" type="RichTextLabel" parent="MarginContainer3"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("6_4gckm")
+theme_override_font_sizes/normal_font_size = 20
+text = "High Score: -0m"
+fit_content = true
+autowrap_mode = 0
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer2/QuitButton" to="." method="_on_quit_button_pressed"]

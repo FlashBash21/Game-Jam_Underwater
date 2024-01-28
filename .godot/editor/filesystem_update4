@@ -15,3 +15,7 @@ res://Scenes/Systems/start_menu.tscn
 res://Scripts/Level Scripts/start_menu.gd
 res://Scenes/Systems/lose_menu.tscn
 res://Scripts/Level Scripts/lose_menu.gd
+res://Scenes/Systems/background.tscn
+res://Scripts/System Scripts/background.gd
+res://Scripts/Shaders/submersable.gdshader
+res://Assets/Sprites/ButtonTextures.tres

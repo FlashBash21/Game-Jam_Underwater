@@ -12,11 +12,12 @@ var spawned_holes: Array
 
 var draining := false
 
-func getNetWaterLevel(delta: float) -> float:
-	var drained_water = 0
-	if draining: drained_water = 100 * delta
-	return spawned_holes.size() * 5 * (1./100.) - drained_water
-
+func getNetWaterGain() -> float:
+	return spawned_holes.size()
+	
+func getNetWaterLoss() -> float:
+	if draining: return 50 / drain_time.wait_time
+	return 0
 func playButtonClick() -> void:
 	if !button_click_player.playing:
 		button_click_player.play()
@@ -46,6 +47,9 @@ func destroyHole(hole: Hole) -> void:
 
 func getDrainCooldown() -> float:
 	return drain_cooldown.wait_time
+
+func updateSpawnTimer(new_time: float) -> void:
+	timer.wait_time = new_time
 
 func _on_timer_timeout():
 	spawnHole()

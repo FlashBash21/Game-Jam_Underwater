@@ -1,9 +1,22 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1706394140
+::res://::1706464880
 icon.svg::CompressedTexture2D::4780604339676773396::1706336514::1706336514::1::::<><>::
-::res://Assets/::1706460550
-::res://Assets/Sounds/::1706460550
+::res://Assets/::1706465305
+::res://Assets/Fonts/::1706465318
+::res://Assets/Fonts/Komika/::1706465327
+KOMIKABB.ttf::FontFile::4688457600964440503::992759220::1706465327::1::::<><>::
+KOMIKABG.ttf::FontFile::5821512677239859596::992794998::1706465327::1::::<><>::
+KOMIKABS.ttf::FontFile::927072444048083366::992701574::1706465327::1::::<><>::
+KOMIKAB_.ttf::FontFile::9017300581296562292::992732170::1706465327::1::::<><>::
+KOMIKAGL.ttf::FontFile::7538383559921605869::992737868::1706465327::1::::<><>::
+KOMIKAP_.ttf::FontFile::3198122903818225598::992706680::1706465327::1::::<><>::
+KOMIKATR.ttf::FontFile::6661378068172924796::992711796::1706465327::1::::<><>::
+KOMIKAX_.ttf::FontFile::551174158278128833::992701826::1706465327::1::::<><>::
+KOMIKRAK.ttf::FontFile::4932676304310962266::992701152::1706465327::1::::<><>::
+KOMIKSKT.ttf::FontFile::1616278736327426389::992742670::1706465327::1::::<><>::
+::res://Assets/Sounds/::1706469560
 button2.mp3::AudioStreamMP3::2652712093775422109::1706393453::1706393464::1::::<><>::
+crunch.mp3::AudioStreamMP3::5744482490799652191::1706469543::1706469560::1::::<><>::
 game_intro.mp3::AudioStreamMP3::6644377686288529905::1706459394::1706459412::1::::<><>::
 game_loop.mp3::AudioStreamMP3::3183916029950081308::1706459396::1706459412::1::::<><>::
 pop_and_hiss.mp3::AudioStreamMP3::2150121425357906404::1706393927::1706393935::1::::<><>::
@@ -12,42 +25,52 @@ sad-trombone.mp3::AudioStreamMP3::8233947091779117594::1706460531::1706460554::1
 step_a.mp3::AudioStreamMP3::563389125876420331::1706393447::1706393464::1::::<><>::
 step_b.mp3::AudioStreamMP3::5196689076475109479::1706391902::1706393464::1::::<><>::
 title.mp3::AudioStreamMP3::1757171926542339827::1706459386::1706459412::1::::<><>::
-::res://Assets/Sprites/::1706460548
+::res://Assets/Sprites/::1706475231
+background..png::CompressedTexture2D::2976392313789357471::1706463238::1706463240::1::::<><>::
+bubble.png::CompressedTexture2D::3426602423558828064::1706464411::1706464413::1::::<><>::
 button.png::CompressedTexture2D::2362475350947579479::1706458755::1706458758::1::::<><>::
 button_highligh.png::CompressedTexture2D::2661592804249256383::1706393150::1706393152::1::::<><>::
 character_idle.png::CompressedTexture2D::4207978144885076689::1706386750::1706386752::1::::<><>::
 character_walk1.png::CompressedTexture2D::4125236062861237682::1706387677::1706387682::1::::<><>::
 character_walk2.png::CompressedTexture2D::755967552437379364::1706387677::1706387683::1::::<><>::
 character_walk3.png::CompressedTexture2D::5023005107807563249::1706387677::1706387683::1::::<><>::
-game_over.jpg::CompressedTexture2D::8886617370677385719::1706459758::1706458482::1::::<><>::
-game_over.png::CompressedTexture2D::411722891673365387::1706460339::1706460341::1::::<><>::
+fish1.png::CompressedTexture2D::6245783404109085640::1706462383::1706462440::1::::<><>::
+game_over.png::CompressedTexture2D::411722891673365387::1706465030::1706465031::1::::<><>::
 hole1.png::CompressedTexture2D::7058195934364842182::1706388681::1706388683::1::::<><>::
 hole2.png::CompressedTexture2D::8305778895797870091::1706388681::1706388683::1::::<><>::
+menu_buttons1.png::CompressedTexture2D::5994539435073594803::1706475523::1706475526::1::::<><>::
+menu_buttons2.png::CompressedTexture2D::3012876281879060404::1706475523::1706475526::1::::<><>::
 progress background.png::CompressedTexture2D::5296920996968010774::1706338385::1706338447::1::::<><>::
 progress fill.png::CompressedTexture2D::7739216306782528881::1706338443::1706338447::1::::<><>::
 ship.png::CompressedTexture2D::8252020725906468258::1706458627::1706458629::1::::<><>::
+ship_mask.png::CompressedTexture2D::8855508020560637496::1706468390::1706468392::1::::<><>::
 water_droplet.png::CompressedTexture2D::2707042920973268151::1706389633::1706389635::1::::<><>::
 ::res://Scenes/::1706336514
-::res://Scenes/Entities/::1706460351
-hole.tscn::PackedScene::778859619989958417::1706460351::0::1::::<><>::res://Scripts/Entity Scripts/hole.gd<>uid://c7tbpq6xtew83::::res://Assets/Sprites/hole1.png<>uid://dqlm72pndbg72::::res://Assets/Sprites/hole2.png<>uid://betkuphuq4w60::::res://Assets/Sprites/water_droplet.png<>uid://5vsgkyjw818s::::res://Assets/Sounds/pop_and_hiss.mp3
-level.tscn::PackedScene::4119211826126703947::1706460351::0::1::::<><>::uid://bsc5htx4smq2u::::res://Scenes/Entities/submersable.tscn<>res://Scripts/Level Scripts/level.gd<>uid://cppth4p4c146q::::res://Scenes/Entities/player.tscn<>uid://8ikktsj8n68g::::res://Scenes/Systems/hole_controller.tscn<>uid://6va0l2d7vxql::::res://Scenes/Entities/button.tscn<>uid://c1wt6u1nu63mr::::res://Assets/Sounds/game_intro.mp3<>uid://blmkvqny7yuga::::res://Assets/Sounds/game_loop.mp3
-player.tscn::PackedScene::5857807359358058482::1706460351::0::1::::<><>::res://Scripts/Entity Scripts/player.gd<>uid://c2wrpvubsgfvp::::res://Scenes/Systems/progress_circle.tscn<>uid://b07m1x0t2ajc0::::res://Assets/Sprites/character_idle.png<>uid://k1gw7pyoom4k::::res://Assets/Sprites/character_walk2.png<>uid://cdtgfpixahx5b::::res://Assets/Sprites/character_walk3.png<>uid://ia563x1jl0t0::::res://Assets/Sounds/step_a.mp3<>uid://cgbkyetx1vbsx::::res://Assets/Sounds/step_b.mp3<>uid://bwv00fctdq8ol::::res://Assets/Sounds/repair2.mp3
-button.tscn::PackedScene::2219251350108373967::1706460351::0::1::::<><>::res://Scripts/Entity Scripts/button.gd<>uid://c2wrpvubsgfvp::::res://Scenes/Systems/progress_circle.tscn<>uid://bd6kbrt3sd5vf::::res://Assets/Sprites/button_highligh.png<>uid://8wnvhgrpm3dr::::res://Assets/Sprites/button.png
-submersable.tscn::PackedScene::3655783669842458442::1706460351::0::1::::<><>::uid://dptlttsd32cba::::res://Assets/Sprites/ship.png
-::res://Scenes/Systems/::1706460351
-hole_controller.tscn::PackedScene::2333372916157958524::1706460351::0::1::::<><>::res://Scripts/System Scripts/HoleController.gd<>uid://bd181snopyegr::::res://Assets/Sounds/button2.mp3
-progress_circle.tscn::PackedScene::6714416565944168029::1706460351::0::1::::<><>::res://Scripts/System Scripts/ProgressCircle.gd<>uid://chp4rri215fxe::::res://Assets/Sprites/progress background.png<>uid://dii605ydxgpfl::::res://Assets/Sprites/progress fill.png
-lose_menu.tscn::PackedScene::1380345705121330490::1706460351::0::1::::<><>::uid://f4pasl33536n::::res://Assets/Sprites/game_over.png
-start_menu.tscn::PackedScene::8032271904471860945::1706460351::0::1::::<><>::res://Scripts/Level Scripts/start_menu.gd<>uid://0bgmn3grpphb::::res://Assets/Sounds/title.mp3
-::res://Scripts/::1706336514
-::res://Scripts/Entity Scripts/::1706393955
+::res://Scenes/Entities/::1706475450
+hole.tscn::PackedScene::778859619989958417::1706475450::0::1::::<><>::res://Scripts/Entity Scripts/hole.gd<>uid://c7tbpq6xtew83::::res://Assets/Sprites/hole1.png<>uid://dqlm72pndbg72::::res://Assets/Sprites/hole2.png<>uid://betkuphuq4w60::::res://Assets/Sprites/water_droplet.png<>uid://5vsgkyjw818s::::res://Assets/Sounds/pop_and_hiss.mp3
+level.tscn::PackedScene::4119211826126703947::1706475450::0::1::::<><>::uid://bsc5htx4smq2u::::res://Scenes/Entities/submersable.tscn<>res://Scripts/Level Scripts/level.gd<>uid://c8uo4iyjo7jdo::::res://Scenes/Systems/background.tscn<>uid://cppth4p4c146q::::res://Scenes/Entities/player.tscn<>uid://8ikktsj8n68g::::res://Scenes/Systems/hole_controller.tscn<>uid://6va0l2d7vxql::::res://Scenes/Entities/button.tscn<>uid://c1wt6u1nu63mr::::res://Assets/Sounds/game_intro.mp3<>uid://blmkvqny7yuga::::res://Assets/Sounds/game_loop.mp3
+player.tscn::PackedScene::5857807359358058482::1706475450::0::1::::<><>::res://Scripts/Entity Scripts/player.gd<>uid://c2wrpvubsgfvp::::res://Scenes/Systems/progress_circle.tscn<>uid://b07m1x0t2ajc0::::res://Assets/Sprites/character_idle.png<>uid://k1gw7pyoom4k::::res://Assets/Sprites/character_walk2.png<>uid://cdtgfpixahx5b::::res://Assets/Sprites/character_walk3.png<>uid://ia563x1jl0t0::::res://Assets/Sounds/step_a.mp3<>uid://cgbkyetx1vbsx::::res://Assets/Sounds/step_b.mp3<>uid://bwv00fctdq8ol::::res://Assets/Sounds/repair2.mp3
+button.tscn::PackedScene::2219251350108373967::1706475450::0::1::::<><>::res://Scripts/Entity Scripts/button.gd<>uid://c2wrpvubsgfvp::::res://Scenes/Systems/progress_circle.tscn<>uid://bd6kbrt3sd5vf::::res://Assets/Sprites/button_highligh.png<>uid://8wnvhgrpm3dr::::res://Assets/Sprites/button.png
+submersable.tscn::PackedScene::3655783669842458442::1706475450::0::1::::<><>::uid://dptlttsd32cba::::res://Assets/Sprites/ship.png<>uid://dyfw6nldkg8f1::::res://Assets/Sprites/ship_mask.png
+::res://Scenes/Systems/::1706475483
+hole_controller.tscn::PackedScene::2333372916157958524::1706475450::0::1::::<><>::res://Scripts/System Scripts/HoleController.gd<>uid://bd181snopyegr::::res://Assets/Sounds/button2.mp3
+progress_circle.tscn::PackedScene::6714416565944168029::1706475450::0::1::::<><>::res://Scripts/System Scripts/ProgressCircle.gd<>uid://chp4rri215fxe::::res://Assets/Sprites/progress background.png<>uid://dii605ydxgpfl::::res://Assets/Sprites/progress fill.png
+lose_menu.tscn::PackedScene::1380345705121330490::1706475451::0::1::::<><>::res://Scripts/Level Scripts/lose_menu.gd<>uid://f4pasl33536n::::res://Assets/Sprites/game_over.png<>uid://bin10nap8mnxn::::res://Assets/Sprites/background..png<>uid://cn3w11f1h4vqt::::res://Assets/Sounds/crunch.mp3<>uid://d1qbvglq4astw::::res://Assets/Fonts/Komika/KOMIKAB_.ttf
+background.tscn::PackedScene::7131263046135441688::1706475451::0::1::::<><>::uid://bin10nap8mnxn::::res://Assets/Sprites/background..png<>res://Scripts/System Scripts/background.gd<>uid://cu8re1ajhga5m::::res://Assets/Sprites/fish1.png<>uid://bo24v2k80d6gq::::res://Assets/Sprites/bubble.png
+start_menu.tscn::PackedScene::8032271904471860945::1706475483::0::1::::<><>::res://Scripts/Level Scripts/start_menu.gd<>uid://0bgmn3grpphb::::res://Assets/Sounds/title.mp3<>uid://bin10nap8mnxn::::res://Assets/Sprites/background..png<>uid://crn2god8g6ryh::::res://Assets/Sprites/menu_buttons1.png<>uid://dptlttsd32cba::::res://Assets/Sprites/ship.png<>uid://bi6pvq2bkf1qe::::res://Assets/Sprites/menu_buttons2.png<>uid://b07m1x0t2ajc0::::res://Assets/Sprites/character_idle.png<>uid://d1qbvglq4astw::::res://Assets/Fonts/Komika/KOMIKAB_.ttf
+::res://Scripts/::1706466575
+::res://Scripts/Entity Scripts/::1706474939
 hole.gd::GDScript::-1::1706393955::0::1::::Hole<>Interactable<>::
-player.gd::GDScript::-1::1706393777::0::1::::<>CharacterBody2D<>::
+player.gd::GDScript::-1::1706474939::0::1::::<>CharacterBody2D<>::
 button.gd::GDScript::-1::1706393188::0::1::::IButton<>Interactable<>::
-::res://Scripts/Level Scripts/::1706459589
-level.gd::GDScript::-1::1706459589::0::1::::<>Node2D<>::
-start_menu.gd::GDScript::-1::1706459496::0::1::::<>Control<>::
-::res://Scripts/System Scripts/::1706394326
-HoleController.gd::GDScript::-1::1706394326::0::1::::<>Node<>::
+::res://Scripts/Level Scripts/::1706474924
+level.gd::GDScript::-1::1706474923::0::1::::<>Node2D<>::
+lose_menu.gd::GDScript::-1::1706461065::0::1::::<>Control<>::
+start_menu.gd::GDScript::-1::1706461783::0::1::::<>Control<>::
+::res://Scripts/Shaders/::1706475483
+submersable.gdshader::Shader::-1::1706475483::0::1::::<><>::
+::res://Scripts/System Scripts/::1706473685
+HoleController.gd::GDScript::-1::1706473685::0::1::::<>Node<>::
 ProgressCircle.gd::GDScript::-1::1706339155::0::1::::<>Control<>::
 Interactable.gd::GDScript::-1::1706382169::0::1::::Interactable<>Area2D<>::
+background.gd::GDScript::-1::1706465552::0::1::::<>Node2D<>::

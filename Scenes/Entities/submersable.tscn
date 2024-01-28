@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsc5htx4smq2u"]
+[gd_scene load_steps=3 format=3 uid="uid://bsc5htx4smq2u"]
 
 [ext_resource type="Texture2D" uid="uid://dptlttsd32cba" path="res://Assets/Sprites/ship.png" id="1_7diim"]
+[ext_resource type="Texture2D" uid="uid://dyfw6nldkg8f1" path="res://Assets/Sprites/ship_mask.png" id="3_j1ewq"]
 
 [node name="Submersable" type="StaticBody2D"]
 collision_layer = 2
@@ -26,3 +27,12 @@ color = Color(0.254902, 0.254902, 0.254902, 1)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 build_mode = 1
 polygon = PackedVector2Array(-11, 97, -10, 110, -2, 133, 14, 155, 53, 184, 94, 204, 881, 195, 905, 186, 934, 170, 965, 148, 991, 119, 991, 20, 1052, 20, 1052, 96, 992, 205, 783, 260, 559, 295, 374, 302, 102, 283, 7, 222)
+
+[node name="WaterFill" type="TextureProgressBar" parent="."]
+modulate = Color(0, 0, 1, 0.270588)
+offset_left = -11.0
+offset_top = -80.0
+offset_right = 1489.0
+offset_bottom = 420.0
+fill_mode = 3
+texture_progress = ExtResource("3_j1ewq")

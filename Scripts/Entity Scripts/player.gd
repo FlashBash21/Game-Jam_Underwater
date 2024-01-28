@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 signal delete_hole(hole)
 signal drain_water()
-signal shoot_shark()
 
 @onready var interaction_area = $"Interaction Area"
 @onready var progress_circle = $ProgressCircle
@@ -78,9 +77,6 @@ func modifyVelocity(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
